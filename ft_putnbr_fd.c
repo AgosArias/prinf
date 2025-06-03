@@ -6,7 +6,7 @@
 /*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 16:11:20 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/31 21:43:08 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/06/03 16:43:57 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	ft_putnbr_fd(int n, int fd)
 		n = -n;
 	}
 	if (n > 9)
-	{
 		ft_putnbr_fd((n / 10), fd);
-	}
 	ft_putchar_fd((n % 10) + '0', fd);
 }

@@ -6,7 +6,7 @@
 /*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 21:19:43 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/31 22:03:42 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/06/03 17:21:06 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int ft_validif(char const *str,va_list ap)
 	if (!*str)
 		return (0);
 	if(*str == 'c')
-	{
 		ft_putchar_fd(str,1);
-		return(ft_strlen(ap));
-	}
-	return(1);
+	else if (*str == 's')
+		ft_putstr_fd(str,1);
+	else if (*str == 's')
+	return (ft_strlen(str));
 }
 
 int	ft_printf(char const *str, ...)
@@ -39,7 +39,8 @@ int	ft_printf(char const *str, ...)
 		{
 			len += ft_validif(*str, ap);
 		}
-		len++;
+		else
+			len++;
 	}
 	va_end(ap);
 	return(len);
