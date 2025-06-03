@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/03 19:27:33 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/06/03 19:46:37 by aarias-d         ###   ########.fr       */
+/*   Created: 2025/05/05 17:50:05 by aarias-d          #+#    #+#             */
+/*   Updated: 2025/05/07 18:10:48 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-
-void	ft_putnbr_unsigned(unsigned int n , int fd)
+int	ft_toupper(int c)
 {
-	if (n > 9)
-		ft_putnbr_unsigned((n / 10), fd);
-	ft_putchar_fd((n % 10) + '0', fd);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }

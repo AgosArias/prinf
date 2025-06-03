@@ -9,7 +9,9 @@ SRC = ft_printf.c \
 	  ft_putnbr.c \
 	  ft_putnbr_unsigned.c \
 	  ft_puthex.c \
-	  ft_putptr.c
+	  ft_toupper.c \
+	  ft_strlen.c \
+
 	  
 OBJ = $(SRC:.c=.o)
 

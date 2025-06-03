@@ -6,16 +6,20 @@ char ft_hex(int c)
         return(c + 'W');
 }
 
-void    ft_converthex(int num)
+void    ft_puthex(int num, char x)
 {
   char c;
   if (num < 16)
   {
     c = ft_hex(num);
+    if (x == 'X')
+      c = ft_toupper(c);
     return(ft_putchar_fd(c, 1));
   }
   if (num > 16)
-    ft_converthex(num/16);
+    ft_puthex((num/16), x);
   c = ft_hex(num % 16);      
+  if (x == 'X')
+    c = ft_toupper(c);
   ft_putchar_fd(c, 1);
 }
