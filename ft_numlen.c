@@ -6,17 +6,19 @@
 /*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 16:58:53 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/06/04 16:59:07 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/06/04 17:56:17 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_numlen(unsigned long n)
+int	ft_numlen(long n)
 {
 	int	len;
 	
 	len = 0;
 	if (n == 0)
 		return (1);
+	if (n < 0)
+		len++;
 	while (n > 0)
 	{
 		n /= 10;
