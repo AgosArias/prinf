@@ -20,7 +20,7 @@ int	ft_validif(char c, va_list ap)
 	if (c == 'c')
 		len += ft_putchar_fd(va_arg(ap, int), 1);
 	else if (c == 's')
-		len += ft_putstr_fd(va_arg(ap, char*), 1);	
+		len += ft_putstr_fd(va_arg(ap, char *), 1);
 	else if (c == 'x' || c == 'X')
 		len += ft_puthex(va_arg(ap, int), c);
 	else if (c == 'd' || c == 'i')
@@ -33,7 +33,7 @@ int	ft_validif(char c, va_list ap)
 		len += ft_putstr_fd("0x", 1) + ft_puthex(va_arg(ap, unsigned int), 'x');
 	else
 		return (0);
-	return(len);
+	return (len);
 }
 
 int	ft_printf(char const *str, ...)
@@ -42,7 +42,7 @@ int	ft_printf(char const *str, ...)
 	int		len;
 
 	len = 0;
-	va_start(ap,str);
+	va_start(ap, str);
 	while (*str)
 	{
 		if (*str++ == '%')
@@ -55,5 +55,5 @@ int	ft_printf(char const *str, ...)
 		str++;
 	}
 	va_end(ap);
-	return(len);
+	return (len);
 }
