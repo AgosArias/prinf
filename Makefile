@@ -4,13 +4,18 @@ CC = cc
 FLAGS = -Wall -Werror -Wextra
 
 SRC = ft_printf.c \
-	  ft_putchar.c \
-	  ft_putstr.c \
-	  ft_putnbr.c \
+	  ft_putchar_fd.c \
+	  ft_putstr_fd.c \
+	  ft_putnbr_fd.c \
 	  ft_putnbr_unsigned.c \
 	  ft_puthex.c \
 	  ft_toupper.c \
 	  ft_strlen.c \
+	  ft_numlen.c \
+	  ft_strlen.c \
+	  ft_toupper.c
+
+
 
 	  
 OBJ = $(SRC:.c=.o)

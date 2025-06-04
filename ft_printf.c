@@ -10,34 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int ft_validif(char const *str,va_list ap)
+int	ft_validif(char c, va_list ap)
 {
-	if (!*str)
+	int	len;
+
+	len = 0;
+	if (c == 'c')
+		len += ft_putchar_fd(va_arg(ap, int), 1);
+	else if (c == 's')
+		len += ft_putstr_fd(va_arg(ap, char*), 1);	
+	else if (c == 'x' || c == 'X')
+		len += ft_puthex(va_arg(ap, int), c);
+	else if (c == 'd' || c == 'i')
+		len += ft_putnbr_fd(va_arg(ap, int), 1);
+	else if (c == '%')
+		len += ft_putchar_fd('%', 1);
+	else if (c == 'u')
+		len += ft_putnbr_unsigned(va_arg(ap, unsigned int), 1);
+	else if (c == 'p')
+		len += ft_putstr_fd("0x", 1) + ft_puthex(va_arg(ap, unsigned int), 'x');
+	else
 		return (0);
-	if(*str == 'c')
-		ft_putchar_fd(va_arg(ap, int), 1);
-	else if (*str == 's')
-		ft_putstr_fd(va_arg(ap, char*),1);	
-	else if (*str == 'x' || *str == 'X')
-		ft_puthex(va_arg(ap, int), str);
-	else if (*str == 'd' || *str == 'i')
-		ft_putnbr_fd(va_arg(ap, int),1);
-	else if (*str == '%')
-		ft_putchar_fd('%',1);
-	else if (*str == 'u')
-		ft_putnbr_unsigned(va_arg(ap, unsigned int),1);
-		
+	return(len);
 }
 
 int	ft_printf(char const *str, ...)
 {
-	va_list ap;
-	int len;
-	
-	if(!ap)
-		return (0);
+	va_list	ap;
+	int		len;
+
 	len = 0;
 	va_start(ap,str);
 	while (*str)
@@ -45,7 +48,11 @@ int	ft_printf(char const *str, ...)
 		if (*str++ == '%')
 			len += ft_validif(*str, ap);
 		else
+		{
 			len++;
+			ft_putchar_fd(*str, 1);
+		}
+		str++;
 	}
 	va_end(ap);
 	return(len);
