@@ -20,7 +20,7 @@ SRC = ft_printf.c \
 	  
 OBJ = $(SRC:.c=.o)
 
-INCLUDE = libftprintf.h
+INCLUDE = ft_printf.h
 
 AR = ar rcs
 RM = rm -f

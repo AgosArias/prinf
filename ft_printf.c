@@ -6,11 +6,12 @@
 /*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 21:19:43 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/06/03 19:53:43 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/06/04 17:47:56 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	ft_validif(char c, va_list ap)
 {
@@ -45,13 +46,17 @@ int	ft_printf(char const *str, ...)
 	va_start(ap, str);
 	while (*str)
 	{
-		if (*str++ == '%')
+		if (*str == '%')
+		{
+			str++;
 			len += ft_validif(*str, ap);
+		}
 		else
 		{
 			len++;
 			ft_putchar_fd(*str, 1);
 		}
+		
 		str++;
 	}
 	va_end(ap);
