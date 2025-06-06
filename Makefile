@@ -8,16 +8,13 @@ SRC = ft_printf.c \
 	  ft_putstr_fd.c \
 	  ft_putnbr_fd.c \
 	  ft_putnbr_unsigned.c \
-	  ft_puthex.c \
+	  ft_puthexadecimal.c \
 	  ft_toupper.c \
 	  ft_strlen.c \
 	  ft_numlen.c \
 	  ft_strlen.c \
 	  ft_toupper.c
 
-
-
-	  
 OBJ = $(SRC:.c=.o)
 
 INCLUDE = ft_printf.h
