@@ -6,7 +6,7 @@
 /*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 18:13:18 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/06/08 18:13:19 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/06/08 20:15:57 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	ft_tohexadecimal(int c)
 {
-		if(c < 10 && c >= 0)
-				return(c + '0');
-		else if (c >= 10 && c < 16)
-				return(c + 'W');
-		return('0');
+	if (c < 10 && c >= 0)
+		return (c + '0');
+	else if (c >= 10 && c < 16)
+		return (c + 'W');
+	return ('0');
 }

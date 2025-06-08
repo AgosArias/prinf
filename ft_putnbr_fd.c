@@ -6,20 +6,19 @@
 /*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 16:11:20 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/06/08 20:06:20 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/06/08 20:19:24 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_putnbr_fd(int n, int fd)
 {
-	int len;
+	int	len;
 
-	len =0;
+	len = 0;
 	if (n == INT_MIN)
-		return (ft_putstr_fd("-2147483648",1));
+		return (ft_putstr_fd("-2147483648", 1));
 	if (n < 0)
 	{
 		len += ft_putchar_fd('-', fd);

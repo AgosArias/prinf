@@ -6,12 +6,11 @@
 /*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 21:19:43 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/06/08 20:04:02 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/06/08 20:19:37 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_validif(char c, va_list ap)
 {
@@ -31,7 +30,7 @@ int	ft_validif(char c, va_list ap)
 	else if (c == 'u')
 		len += ft_putnbr_unsigned(va_arg(ap, unsigned int), 1);
 	else if (c == 'p')
-		len +=  ft_putpointer(va_arg(ap, long int ), 'x');
+		len += ft_putpointer(va_arg(ap, long int ), 'x');
 	else
 		return (0);
 	return (len);
@@ -56,7 +55,6 @@ int	ft_printf(char const *str, ...)
 			len++;
 			ft_putchar_fd(*str, 1);
 		}
-		
 		str++;
 	}
 	va_end(ap);
