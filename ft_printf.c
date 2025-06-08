@@ -6,7 +6,7 @@
 /*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 21:19:43 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/06/08 18:15:13 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/06/08 19:36:36 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ int	ft_validif(char c, va_list ap)
 	else if (c == 'x' || c == 'X')
 		len += ft_printhexadecimal(va_arg(ap, unsigned int ), c);
 	else if (c == 'd' || c == 'i')
-		len += ft_putnbr_fd(va_arg(ap, int), 1);
+		len += ft_putnbr_fd(va_arg(ap, long), 1);
 	else if (c == '%')
 		len += ft_putchar_fd('%', 1);
 	else if (c == 'u')
 		len += ft_putnbr_unsigned(va_arg(ap, unsigned int), 1);
 	else if (c == 'p')
-		len +=  ft_putpointer(va_arg(ap, unsigned long int ), 'x');
+		len +=  ft_putpointer(va_arg(ap, long int ), 'x');
 	else
 		return (0);
 	return (len);

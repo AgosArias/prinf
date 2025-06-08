@@ -6,7 +6,7 @@
 /*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 18:14:27 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/06/08 18:25:34 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/06/08 19:34:31 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_printpointer(unsigned long int num, char x)
 
 	len = 0;
 	if (num >= 16)
-		len += ft_printhexadecimal((unsigned long int)(num / (unsigned long int)16), x);
+		len += ft_printpointer((unsigned long int)(num / ( long int)16), x);
 	c = ft_tohexadecimal(num % 16);
 	if (x == 'X')
 		c = (char)ft_toupper((int)c);
@@ -38,7 +38,7 @@ int ft_putpointer(unsigned long int num, char x)
 	else
 	{
 		len += ft_putstr_fd("0x", 1); 
-		len += ft_printhexadecimal(num, x);
+		len += ft_printpointer(num, x);
 	}
 	return(len);
 }
