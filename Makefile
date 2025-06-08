@@ -13,7 +13,9 @@ SRC = ft_printf.c \
 	  ft_strlen.c \
 	  ft_numlen.c \
 	  ft_strlen.c \
-	  ft_toupper.c
+	  ft_toupper.c \
+	  ft_tohexadecimal.c \
+	  ft_putpointer.c
 
 OBJ = $(SRC:.c=.o)
 

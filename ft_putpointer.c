@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthexadecimal.c                                :+:      :+:    :+:   */
+/*   ft_putpointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 16:58:20 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/06/08 18:15:54 by aarias-d         ###   ########.fr       */
+/*   Created: 2025/06/08 18:14:27 by aarias-d          #+#    #+#             */
+/*   Updated: 2025/06/08 18:25:34 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printhexadecimal(unsigned int num, char x)
+int	ft_printpointer(unsigned long int num, char x)
 {
 	char	c;
 	int len;
 
 	len = 0;
 	if (num >= 16)
-		len += ft_printhexadecimal((unsigned int)(num / (int)16), x);
+		len += ft_printhexadecimal((unsigned long int)(num / (unsigned long int)16), x);
 	c = ft_tohexadecimal(num % 16);
 	if (x == 'X')
 		c = (char)ft_toupper((int)c);
@@ -28,7 +28,7 @@ int	ft_printhexadecimal(unsigned int num, char x)
 }
 
 
-int ft_puthexadecimal(unsigned int num, char x)
+int ft_putpointer(unsigned long int num, char x)
 {
 	int	len;
 
