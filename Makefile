@@ -11,7 +11,6 @@ SRC = ft_printf.c \
 	  ft_puthexadecimal.c \
 	  ft_toupper.c \
 	  ft_strlen.c \
-	  ft_numlen.c \
 	  ft_strlen.c \
 	  ft_toupper.c \
 	  ft_tohexadecimal.c \
